@@ -10,7 +10,7 @@ def justify_line_based_on_width(para, maxWidth):
     for word in word_list:
         if num_of_letters + len(word) + len(current_line) > maxWidth:
             for i in range(maxWidth - num_of_letters):
-                current_line[i % (len(current_line) - 1)] += ' '
+                current_line[i % (len(current_line) - 1 or 1)] += ' '
             result_list.append(''.join(current_line))
             current_line, num_of_letters = [], 0
         current_line += [word]
